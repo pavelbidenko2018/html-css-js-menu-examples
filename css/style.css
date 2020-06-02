@@ -19,39 +19,23 @@ nav {
     width: 100%;
     height: var(--line);
     background-color: rgba(248, 172, 100, 0.363);
-    padding-left: 30px;
+    position: relative;
 }
 
-nav ul {
+.left-side-menu {
+    margin-left: 40px;
     list-style: none;
     float: left;
 }
 
-nav ul li {
+.left-side-menu li {
     line-height: 55px;
     float: left;
     position: relative;
 }
 
-nav ul li {
-    line-height: 55px;
-    float: left;
-    position: relative;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    padding: 0 10px;
-}
-
-nav ul li ul {
+.left-side-menu li ul {
+    list-style: none;
     display: none;
     position: absolute;
     top: 60px;
@@ -59,16 +43,25 @@ nav ul li ul {
     border-radius: 0 0 10px 10px;
 }
 
-nav ul li:hover ul {
+.left-side-menu li:hover ul {
     display: block;
 }
 
-nav ul li ul li {
+.left-side-menu a,
+.flyout-menu a {
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.left-side-menu li ul li {
     width: 175px;
     padding: 0 10px;
 }
 
-nav ul li ul li a {
+.left-side-menu li ul li a {
     padding: 0;
 }
 
@@ -76,6 +69,49 @@ nav ul li ul li a {
     color: rgb(151, 0, 0);
 }
 
-nav ul li a:hover {
+.left-side-menu a:hover,
+.right-side-menu a:hover {
     color: rgb(151, 0, 0);
+}
+
+#btnMenu {
+    position: absolute;
+    right: 40px;
+    margin-top: 14px;
+    width: 20px;
+    height: 24px;
+    padding: 4px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+#btnMenu:hover {
+    border: 2px solid rgb(85, 55, 27, 0.8);
+    border-radius: 4px;
+    /*background: rgba(248, 172, 100, .363); */
+    background: #ddd;
+}
+
+#btnMenu>div {
+    height: 2px;
+    background: rgb(85, 55, 27, 0.8);
+    width: 100%;
+}
+
+.flyout-menu {
+    display: block;
+    clear: both;
+    background: rgba(248, 172, 100, 0.363);
+    border-radius: 0 0 10px 10px;
+    list-style: none;
+    position: fixed;
+    top: 80px;
+    right: -310px;
+    transition: right 0.5s;
+}
+
+.flyout-menu li {
+    line-height: 55px;
 }

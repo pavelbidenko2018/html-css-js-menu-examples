@@ -13,7 +13,7 @@
     <div class="wrapper">
         <nav>
 
-            <ul>
+            <ul class="left-side-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Portfolio</a>
                     <ul>
@@ -26,9 +26,43 @@
                 <li><a href="index.html">Contacts</a></li>
 
             </ul>
+
+            <div id="btnMenu" onclick="toggleBar()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
         </nav>
 
+        <ul class="flyout-menu">
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 1</a></li>
+        </ul>
+
     </div>
+
+    <script>
+        function toggleBar() {
+            var menu = document.getElementsByClassName('flyout-menu');
+            var i;
+            for (i = 0; i < menu.length; i++) {
+                if (menu[i].style.right === "0px") {
+                    menu[i].style.right = "-310px";
+                } else {
+                    menu[i].style.right = "0px";
+                }
+            }
+
+        }
+    </script>
+
 
 </body>
 
